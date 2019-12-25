@@ -19,7 +19,7 @@ app.set("view engine","ejs")
 app.use(express.static(__dirname+"/public"))		//dirname is just used in case our directory path to public changes i.e. for dynamic behaviour
 app.use(methodOverride("_method"))
 app.use(flash())
-mongoose.connect('mongodb://localhost/yelp_camp')
+mongoose.connect('mongodb+srv://rishabh:rishabh@yelpcamp-ltoin.mongodb.net/test?retryWrites=true&w=majority')
 // seedDB()
 
 // PASSPORT CONFIGURATION
@@ -44,6 +44,6 @@ app.use(function(req,res,next){
 app.use('/campgrounds',campgroundRoutes);
 app.use('/campgrounds/:id',commentRoutes);
 app.use('/',indexRoutes);
-app.listen(3005,()=>{
+app.listen(3000,()=>{
 	console.log("Yelpcamp server running at port 3000")
 })
