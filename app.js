@@ -44,6 +44,6 @@ app.use(function(req,res,next){
 app.use('/campgrounds',campgroundRoutes);
 app.use('/campgrounds/:id',commentRoutes);
 app.use('/',indexRoutes);
-app.listen(3000,()=>{
+app.listen(process.env.PORT || 3000,()=>{
 	console.log("Yelpcamp server running at port 3000")
 })
